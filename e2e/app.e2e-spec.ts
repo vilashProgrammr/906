@@ -8,13 +8,22 @@ describe('github-user-search App', () => {
     page = new AppPage();
   });
 
-  it('TestCase 1|It should display movie finder screen|0', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Movies Finder');
+  it('TestCase 1|Clicking on view details should open the popup|5', () => {
+    page.navigateTo('/upcoming');
+    //console.log("1111111111111111"+page.get_popupElement().getText());
+  browser.sleep(2000);   
+    page.click_upcoming();
+     browser.sleep(8000);
+     page.click_ViewDetails();
+ browser.sleep(3000);
+ //console.log("@@@@@@@@"+page.get_popupElement().getText());
+    expect(page.get_popupElement().isPresent()).toBeTruthy();
   });
 
-  it('TestCase 2|It should launch autocomplete|10',()=>{
+  it('TestCase 2|It should launch the AutoComplete|5',()=>{
         
+        page.navigateTo('/');
+        browser.sleep(4000);
         page.getSearchkeyword1();
         browser.sleep(2000);
         page.clearSearchkeyword1();
