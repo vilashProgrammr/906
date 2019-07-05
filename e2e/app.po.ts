@@ -1,8 +1,8 @@
 import { browser, by, element, promise } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateTo(path:string) {
+    return browser.get(path);
   }
 
   getParagraphText() {
@@ -73,4 +73,16 @@ getMovieinfo2_enterKeyword()
   {
   		return element(by.xpath('//input[contains(@class,"mat-input-element")]')).sendKeys("ab");
   }
+
+  //testcase1
+  click_ViewDetails(){
+      return element(by.xpath("/html/body/app-root/div/div/div[2]/app-upcoming/div[2]/div/div[1]/movie-card/div/div/p[2]/a")).click();
+  }
+  click_upcoming(){
+      return element(by.xpath('//*[@id="navbar"]/ul/li[1]/a')).click();
+  }
+  get_popupElement(){
+      return element(by.xpath('//*[@id="mat-dialog-0"]'));
+  }
 }
+ 
