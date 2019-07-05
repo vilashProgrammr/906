@@ -14,17 +14,14 @@ export class MovieCardComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(movie) {
+   //Uncomment the below block to pass the Testcase 1
+  /*
     let dialogRef = this.dialog.open( MovieDetailsPopupComponent, {
     height: '600px',
     width: '800px',
     data: movie
     });
     dialogRef.componentInstance.movie = movie;
-    // const sub = dialogRef.componentInstance.onMovieSelect.subscribe((data) => {
-    //  this.addToMovieBucket(data);
-    // });
-    // dialogRef.afterClosed().subscribe(() => {
-    //   sub.unsubscribe();
-    // });
+   */
   }
 }
